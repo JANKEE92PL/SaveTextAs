@@ -43,10 +43,12 @@ import {querySelector} from "/script.js";
     /**
      ** TESTCASES
      */
-
+    /**
+     *? Testing for Correct Rendering all Nodes inside of Element .wrapper
+     */
     it("should render the component in DOM", () => {
         const wrapper = querySelector(".wrapper")
-        alert(wrapper)
+        assert(wrapper.childElementCount === 4)
     })
 
 })();
