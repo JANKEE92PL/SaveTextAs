@@ -1,5 +1,8 @@
+import {querySelector} from "/script.js";
+
 (function () {
     'use strict';
+
 
     /**
      * test function
@@ -37,5 +40,13 @@
     //     assert(1 === 1);
     // });
     // ! EXAMPLES END
+    /**
+     ** TESTCASES
+     */
+
+    it("should render the component in DOM", () => {
+        const wrapper = querySelector(".wrapper")
+        alert(wrapper)
+    })
 
 })();

@@ -1,7 +1,7 @@
 //*
 //* Global Functions
 //*
-const querySelector = (target => document.querySelector(target));
+export const querySelector = (target => document.querySelector(target));
 
 //*
 //* Variables
