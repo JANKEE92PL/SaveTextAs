@@ -6,5 +6,6 @@ const textarea = querySelector("textarea"),
     saveBtn = querySelector(".save-btn");
 
 saveBtn.addEventListener("click", () => {
-    console.log(textarea.value)
+    const blob = new Blob([textarea.value], {type: selectMenu.value})
+    console.log(blob)
 })
