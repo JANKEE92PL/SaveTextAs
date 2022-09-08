@@ -1,7 +1,25 @@
 //*
+//* Import
+//*
+import {runTests} from "/test.js";
+
+
+//*
 //* Functions
 //*
-export const querySelector = (target => document.querySelector(target));
+export const devmodeActive = () => {
+    return true
+}
+
+const createTestBtn = () => {
+    devmodeActive()
+    wrapper.insertAdjacentElement("beforeend", testBtn,)
+    testBtn.classList.add("test-btn")
+    testBtn.innerText = "Start Testing"
+    testBtn.onclick = runTests
+}
+
+export const get = (target => document.querySelector(target));
 
 const setDisableSaveBtn = () => {
     textarea.value === '' ? saveBtn.disabled = true : saveBtn.disabled = false;
@@ -18,9 +36,12 @@ const loaderSimulation = () => {
 //*
 //* Variables
 //*
-export const textarea = querySelector("textarea"), fileNameInput = querySelector(".file-name input"),
-    loader = querySelector('.lds-hourglass'), selectMenu = querySelector(".save-as select"),
-    saveBtn = querySelector(".save-btn");
+export const textarea = get("textarea"), fileNameInput = get(".file-name input"),
+    loader = get('.lds-hourglass'), selectMenu = get(".save-as select"),
+    saveBtn = get(".save-btn"), wrapper = get(".wrapper");
+
+const testBtn = document.createElement("Button")
+
 
 //*
 //* Assigning
@@ -57,5 +78,10 @@ saveBtn.addEventListener("click", () => {
     link.click()
 })
 
+/**
+ * Checking the Status of SaveBtn.disabled
+ */
 textarea.addEventListener("input", setDisableSaveBtn)
 
+
+textarea.ondblclick = createTestBtn

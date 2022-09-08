@@ -1,8 +1,7 @@
-import {querySelector, saveBtn, textarea} from "/script.js";
+import {get, saveBtn, textarea, devmodeActive} from "/script.js";
 
-(function () {
+export const runTests = async () => {
     'use strict';
-
 
     /**
      * test function
@@ -46,14 +45,14 @@ import {querySelector, saveBtn, textarea} from "/script.js";
     /**
      *? Testing for Correct Rendering all Nodes inside of Element .wrapper
      */
-    it("should render the component in DOM", () => {
-        const wrapper = querySelector(".wrapper")
-        assert(wrapper.childElementCount === 4)
+    await it("should render the component in DOM", () => {
+        const wrapper = get(".wrapper")
+        devmodeActive ? assert(wrapper.childElementCount === 5) : assert(wrapper.childElementCount === 4)
     })
 
-    it('should disable the saveBTN if textarea empty || invalid', () => {
+    await it('should disable the saveBTN if textarea empty || invalid', () => {
         textarea.value = ''
 
         assert(saveBtn.style.opacity != 1)
     });
-})();
+};
