@@ -7,7 +7,8 @@ const querySelector = (target => document.querySelector(target));
 //* Variables
 //*
 const textarea = querySelector("textarea"), fileNameInput = querySelector(".file-name input"),
-    selectMenu = querySelector(".save-as select"), saveBtn = querySelector(".save-btn");
+    loader = querySelector('.lds-hourglass'), selectMenu = querySelector(".save-as select"),
+    saveBtn = querySelector(".save-btn");
 //*
 //* Event Listeners
 //*
@@ -17,7 +18,7 @@ const textarea = querySelector("textarea"), fileNameInput = querySelector(".file
  */
 selectMenu.addEventListener("change", () => {
     let selectedOption = selectMenu.options[selectMenu.selectedIndex].text;
-    saveBtn.innerText = `Save as ${selectedOption.split(" ")[0]}`
+    saveBtn.innerText = `Save as ${selectedOption.split(" ")[0]}`;
 })
 
 /**
@@ -29,6 +30,7 @@ selectMenu.addEventListener("change", () => {
  *      ? execute the link
  */
 saveBtn.addEventListener("click", () => {
+    loaderSimulation()
     const blob = new Blob([textarea.value], {type: selectMenu.value})
     const fileUrl = URL.createObjectURL(blob)
     const link = document.createElement("a");
@@ -36,3 +38,10 @@ saveBtn.addEventListener("click", () => {
     link.href = fileUrl;
     link.click()
 })
+
+const loaderSimulation = () => {
+    loader.style.display = "inline-block"
+    setTimeout(() => {
+        loader.style.display = "none"
+    }, 1200)
+}
