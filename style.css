@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #17A2B8;
+    min-height: 100vh;
+}
+
+.wrapper {
+    width: 450px;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 32px 24px 40px;
+}
+
+.wrapper :where(textarea, input, select, button) {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+}
+
+.wrapper textarea {
+    height: 280px;
+    resize: none;
+    border: 1px solid #ccc;
+}
+
+.wrapper .file-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.file-options .option {
+    width: calc(100% / 2 - 8px);
+}
+
+.option :where(input, .select-menu) {
+    height: 50px;
+    padding: 0 16px;
+    border: 1px solid #bfbfbf;
+    margin-top: 8px;
+    border-radius: 6px;
+}
+
+.option .select-menu select {
+    height: 50px;
+    background: none;
+}
+
+.wrapper .save-btn {
+    color: #fff;
+    margin-top: 20px;
+    padding: 16px 0;
+    background-color: #17A2B8;
+    cursor: pointer;
+}
