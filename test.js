@@ -1,4 +1,4 @@
-import {querySelector} from "/script.js";
+import {querySelector, saveBtn, textarea} from "/script.js";
 
 (function () {
     'use strict';
@@ -51,4 +51,9 @@ import {querySelector} from "/script.js";
         assert(wrapper.childElementCount === 4)
     })
 
+    it('should disable the saveBTN if textarea empty || invalid', () => {
+        textarea.value = ''
+
+        assert(saveBtn.style.opacity != 1)
+    });
 })();

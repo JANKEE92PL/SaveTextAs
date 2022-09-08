@@ -1,14 +1,32 @@
 //*
-//* Global Functions
+//* Functions
 //*
 export const querySelector = (target => document.querySelector(target));
+
+const setDisableSaveBtn = () => {
+    textarea.value === '' ? saveBtn.disabled = true : saveBtn.disabled = false;
+}
+
+const loaderSimulation = () => {
+    loader.style.display = "inline-block"
+    setTimeout(() => {
+        loader.style.display = "none"
+    }, 1200)
+}
+
 
 //*
 //* Variables
 //*
-const textarea = querySelector("textarea"), fileNameInput = querySelector(".file-name input"),
+export const textarea = querySelector("textarea"), fileNameInput = querySelector(".file-name input"),
     loader = querySelector('.lds-hourglass'), selectMenu = querySelector(".save-as select"),
     saveBtn = querySelector(".save-btn");
+
+//*
+//* Assigning
+//*
+saveBtn.disabled = true;
+
 //*
 //* Event Listeners
 //*
@@ -39,9 +57,5 @@ saveBtn.addEventListener("click", () => {
     link.click()
 })
 
-const loaderSimulation = () => {
-    loader.style.display = "inline-block"
-    setTimeout(() => {
-        loader.style.display = "none"
-    }, 1200)
-}
+textarea.addEventListener("input", setDisableSaveBtn)
+

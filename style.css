@@ -70,22 +70,24 @@ body {
     padding: 16px 0;
     background-color: #0cebeb;
     cursor: pointer;
-    opacity: 60%;
     pointer-events: none;
     transition: opacity 250ms ease-in;
 }
 
 .wrapper textarea:valid ~ .save-btn {
-    opacity: 100%;
+    opacity: 1;
     pointer-events: auto;
 }
-.wrapper textarea:invalid {
-    border: 2px solid #0cebeb;
-}
+
 .wrapper textarea:invalid ~ .save-btn {
     animation-name: shake;
     animation-duration: 1s;
     animation-fill-mode: both;
+    opacity: .5;
+}
+
+.wrapper textarea:invalid {
+    border: 2px solid #0cebeb;
 }
 
 @keyframes shake {
