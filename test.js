@@ -1,9 +1,10 @@
-import {saveBtn, textarea, wrapper, devmodeActive,} from "/script.js";
+import {saveBtn, textarea, wrapper, devmodeActive, fileNameInput, selectMenu,} from "/script.js";
 
 
 export const runTests = () => {
     'use strict';
-
+    console.clear()
+    console.time("Test duration:")
     /**
      * test function
      * @param {string} desc
@@ -57,8 +58,14 @@ export const runTests = () => {
 
     it('should disable the saveBTN if textarea empty || invalid', () => {
         textarea.value = ''
-        assert(saveBtn.style.opacity != 1)
+        assert(saveBtn.disabled)
     });
 
+
+
+    //* Cleaning the CONSOLE
+    console.group('\x1b[32m%s\x1b[0m', '\u0394 Timing')
+    console.timeEnd("Test duration:")
+    console.groupEnd()
 
 };
