@@ -12,6 +12,26 @@ export const devmodeActive = () => {
     return true
 }
 
+const createHelperElements = () => {
+
+    if (testResults.childElementCount === 0) {
+
+        let head = document.createElement("h2")
+        testResults.insertAdjacentElement('beforebegin', head)
+        head.innerText = "TEST RESULTS"
+
+        let li = document.createElement("li")
+        let p = document.createElement("p")
+
+        testResults.insertAdjacentElement('beforeend', li)
+        li.innerText = "please open the Console and Check the Results"
+        testResults.insertAdjacentElement('beforeend', p)
+        p.innerText = "Cmd+Option+I (Mac) or Strg+Shift+I (Windows)"
+
+    }
+
+}
+
 const createTestBtn = () => {
     devmodeActive()
     wrapper.insertAdjacentElement("beforeend", testBtn,)
@@ -20,7 +40,10 @@ const createTestBtn = () => {
 
     testBtn.onclick = () => {
         modal.style.display = "block";
+
         runTests()
+        createHelperElements()
+
     }
 }
 

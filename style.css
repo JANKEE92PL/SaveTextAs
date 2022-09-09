@@ -174,7 +174,7 @@ body {
 }
 
 .test-results {
-    list-style-type: number;
+    list-style-type: square;
     padding: 16px;
     color: #20e3b2;
 }
@@ -182,7 +182,6 @@ body {
 .test-results-false {
     text-decoration: line-through;
     color: #888888;
-
 }
 
 @keyframes lds-hourglass {
