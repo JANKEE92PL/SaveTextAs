@@ -1,7 +1,7 @@
 //*
 //* Import
 //*
-import {runTests} from "/test.js";
+import {runTests} from "./test.js";
 
 
 //*
