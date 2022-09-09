@@ -49,7 +49,7 @@ export const runTests = () => {
      */
     it("should render the component in DOM", () => {
         if (devmodeActive) {
-            assert(wrapper.childElementCount === 60) //! FOR TRUE 6
+            assert(wrapper.childElementCount === 6)
         } else {
             assert(wrapper.childElementCount === 4)
         }
@@ -59,4 +59,6 @@ export const runTests = () => {
         textarea.value = ''
         assert(saveBtn.style.opacity != 1)
     });
+
+
 };
