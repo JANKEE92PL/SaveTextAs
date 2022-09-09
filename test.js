@@ -50,9 +50,9 @@ export const runTests = () => {
      */
     it("should render the component in DOM", () => {
         if (devmodeActive) {
-            assert(wrapper.childElementCount === 6)
+            assert(wrapper.tagName === "DIV" && wrapper.childElementCount === 6)
         } else {
-            assert(wrapper.childElementCount === 4)
+            assert(wrapper.tagName === "DIV" && wrapper.childElementCount === 5)
         }
     })
 
