@@ -1,7 +1,7 @@
 //*
 //* Import
 //*
-import {runTests} from "/test.js";
+import {runTests} from "/SaveTextAs/test.js";
 
 
 //*
@@ -119,7 +119,7 @@ saveBtn.addEventListener("click", () => {
 textarea.addEventListener("input", setDisableSaveBtn)
 
 /**
- * ! To start the Devmode please doublle click in the <Textarea>
+ * ! To start the Dev-mode please double-click in the <Textarea>
  * @type {createTestBtn}
  */
 textarea.ondblclick = createTestBtn

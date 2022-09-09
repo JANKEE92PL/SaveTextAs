@@ -1,4 +1,4 @@
-import {saveBtn, textarea, wrapper, devmodeActive} from "/script.js";
+import {saveBtn, textarea, wrapper, devmodeActive} from "/SaveTextAs/script.js";
 
 
 export const runTests = () => {
