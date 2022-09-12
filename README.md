@@ -1,4 +1,4 @@
-# SaveTextAs
+# SaveTextAs Component incl. Unit Test
 
 * [SaveTextAs Component](https://github.com/JANKEE92PL/SaveTextAs)
   > [Live Demo](https://jankee92pl.github.io/SaveTextAs/)🆕
